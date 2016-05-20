@@ -1,0 +1,19 @@
+current directory: /home/salah/Desktop/biblio/vendor/bundle/ruby/2.3.0/gems/bcrypt-3.1.11/ext/mri
+/home/salah/.rbenv/versions/2.3.0/bin/ruby -r ./siteconf20160520-24988-18auev4.rb extconf.rb
+creating Makefile
+
+current directory: /home/salah/Desktop/biblio/vendor/bundle/ruby/2.3.0/gems/bcrypt-3.1.11/ext/mri
+make "DESTDIR=" clean
+
+current directory: /home/salah/Desktop/biblio/vendor/bundle/ruby/2.3.0/gems/bcrypt-3.1.11/ext/mri
+make "DESTDIR="
+compiling wrapper.c
+compiling crypt_gensalt.c
+compiling bcrypt_ext.c
+compiling crypt_blowfish.c
+compiling crypt.c
+linking shared-object bcrypt_ext.so
+
+current directory: /home/salah/Desktop/biblio/vendor/bundle/ruby/2.3.0/gems/bcrypt-3.1.11/ext/mri
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bcrypt_ext.so ./.gem.20160520-24988-1ocotl2

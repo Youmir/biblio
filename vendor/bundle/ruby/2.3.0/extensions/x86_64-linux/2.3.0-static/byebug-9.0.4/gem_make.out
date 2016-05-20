@@ -1,0 +1,19 @@
+current directory: /home/salah/Desktop/biblio/vendor/bundle/ruby/2.3.0/gems/byebug-9.0.4/ext/byebug
+/home/salah/.rbenv/versions/2.3.0/bin/ruby -r ./siteconf20160520-24988-1w3nuvt.rb extconf.rb
+creating Makefile
+
+current directory: /home/salah/Desktop/biblio/vendor/bundle/ruby/2.3.0/gems/byebug-9.0.4/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /home/salah/Desktop/biblio/vendor/bundle/ruby/2.3.0/gems/byebug-9.0.4/ext/byebug
+make "DESTDIR="
+compiling byebug.c
+compiling context.c
+compiling threads.c
+compiling breakpoint.c
+compiling locker.c
+linking shared-object byebug/byebug.so
+
+current directory: /home/salah/Desktop/biblio/vendor/bundle/ruby/2.3.0/gems/byebug-9.0.4/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.so ./.gem.20160520-24988-3wseqb/byebug
