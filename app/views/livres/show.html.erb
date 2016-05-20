@@ -1,0 +1,22 @@
+
+
+
+
+<div class="container" style="width: 700px; margin-top:100px">
+<div class="list-group">
+    <a class="list-group-item active">
+        <span class="glyphicon glyphicon-barcode"></span>&nbsp ISBN : &nbsp&nbsp&nbsp<%= @livre.isbn %>
+    </a>
+    <a class="list-group-item">
+        <span class="glyphicon glyphicon-font"></span>&nbsp Titre : &nbsp&nbsp&nbsp<%= @livre.titre %>
+    </a>
+    <a  class="list-group-item">
+        <span class="glyphicon glyphicon-pencil"></span>&nbsp Auteur : &nbsp&nbsp&nbsp <%= @livre.auteur %>
+    </a>
+    <a  class="list-group-item">
+        <span class="glyphicon glyphicon-modal-window"></span>&nbsp Editeur : &nbsp&nbsp&nbsp<%= @livre.editeur %>
+    </a>
+    <%= link_to 'Edit', edit_livre_path(@livre) %> |
+<%= link_to 'Back', livres_path %>
+</div>
+</div>

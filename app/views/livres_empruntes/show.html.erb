@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Livre:</strong>
+  <%= @livres_emprunte.livre_id %>
+</p>
+
+<p>
+  <strong>Adherent:</strong>
+  <%= @livres_emprunte.adherent_id %>
+</p>
+
+<%= link_to 'Edit', edit_livres_emprunte_path(@livres_emprunte) %> |
+<%= link_to 'Back', livres_empruntes_path %>

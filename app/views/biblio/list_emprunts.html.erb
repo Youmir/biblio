@@ -1,0 +1,26 @@
+<h1>Librarian List Books On Loan</h1>
+<table>
+<tr>
+<th>Author</th>
+<th>Title</th>
+<th>ISBN</th>
+<th>Nom</th>
+<th>Prenom</th>
+</tr>
+
+<% for item in @emps %>
+<% livre20=Livre.find_by_id(item.livre_id)%>
+<% adherent20=Adherent.find_by_id(item.adherent_id)%>
+<tr>
+<td><%= livre20.auteur %></td>
+<td><%= livre20.titre %></td>
+<td><%= livre20.isbn %></td>
+<td><%= adherent20.nom %></td>
+<td><%= adherent20.prenom %></td>     
+</tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Back', biblio_index_path %>

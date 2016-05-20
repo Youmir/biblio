@@ -1,0 +1,41 @@
+<%= form_for @editeur , :html => {:class => "col s12"} do |f| %>
+  <% if @editeur.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@editeur.errors.count, "error") %> prohibited this editeur from being saved:</h2>
+
+      <ul>
+      <% @editeur.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ 
+
+
+
+<div class="container">
+        <div class="col m10 offset-m1 s12">
+                        <div class="input-field col m6 s12">
+                            <p class="input-field">username :</p><%= f.text_field :username  %>
+                        </div>
+
+                        <div class="input-field col m6 s12">
+                             <p class="input-field">Email :</p><%= f.email_field :email %>
+                        </div>
+
+                        <div class="input-field col m6 s12">
+                             <p class="input-field">password :</p><%= f.password_field :password %>
+                        </div>
+                      
+                    <div class="divider"></div>
+                    <div class="row">
+                        <div class="col m12">
+                         <p class="right-align"><%= f.submit 'valider', :class => 'btn btn-small waves-effect waves-light'%></p>
+                        </div>
+                    </div>
+                <% end %>
+        </div>
+
+    </div>

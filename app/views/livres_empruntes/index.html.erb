@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Livres Empruntes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Livre</th>
+      <th>Adherent</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @livres_empruntes.each do |livres_emprunte| %>
+      <tr>
+        <td><%= livres_emprunte.livre_id %></td>
+        <td><%= livres_emprunte.adherent_id %></td>
+        <td><%= link_to 'Show', livres_emprunte %></td>
+        <td><%= link_to 'Edit', edit_livres_emprunte_path(livres_emprunte) %></td>
+        <td><%= link_to 'Destroy', livres_emprunte, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Livres emprunte', new_livres_emprunte_path %>

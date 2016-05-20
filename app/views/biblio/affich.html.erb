@@ -1,0 +1,60 @@
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script>
+  $(document).ready(function(){
+      $('.slider').slider({full_width: true});
+      $(".button-collapse").sideNav();
+    });
+   $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('#myModal').modal(options)
+  });
+
+ 
+        
+</script>
+</head>
+
+
+<h3 class="title">Liste des Livres</h3>
+
+
+
+    
+
+
+ 
+<% @livres.each do |livre| %>
+<div class="row">
+  
+  <div class="col-xs-6 col-sm-3"><div class="card" style="max-width: 318px;">
+      <img class="card-img-top" src="/images/office.jpg" style="max-width: 318px;" alt="Card image cap">
+      <div class="card-block " style="max-width: 318px;">
+        <h4 class="card-title center">  <%= livre.titre %></h4>
+        <p class="card-text">
+        
+             <ul class="list-group">
+                <li class="list-group-item">Auteur :  <%= livre.auteur %></li>
+                <li class="list-group-item">Editeur : <%= livre.editeur %></li>
+              </ul>
+        
+        </p>
+        <%= button_to 'emprunter', emprunter_path(:titre => livre.titre), {class: 'btn btn-raised btn-primary btn-inverse btn-sm', :style => "width: 318px", data: { confirm: "Etes vous sur de vouloir emprunter ce livre ?" }}  %>
+      </div>
+    </div></div>
+  
+
+  <!-- Add the extra clearfix for only the required viewport -->
+  
+<% end %>
+
+</div> 
+
+<div class="clearfix hidden-sm-up"></div>
+
+
+
+
+
+
+

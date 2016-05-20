@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h3 class="title">Livres en attente de validation</h3>
+
+
+<% @nvs.each do |nv| %>
+<div class="row">
+  
+  <div class="col-xs-6 col-sm-3"><div class="card" style="max-width: 318px;">
+      <img class="card-img-top" src="/images/book.jpg" style="max-width: 318px;" alt="Card image cap">
+      <div class="card-block " style="max-width: 318px;">
+        <h4 class="card-title center">  <%= nv.titre %></h4>
+        <p class="card-text">
+        
+             <ul class="list-group">
+                <li class="list-group-item">Auteur :  <%= nv.auteur %></li>
+                <li class="list-group-item">Editeur : <%= nv.editeur %></li>
+                <li class="list-group-item">Disponibilité :<% if nv.estDispo == 1 %>
+        Disponible
+        <% else %>
+        Emprunté  
+        <% end %></li>
+                <li class="list-group-item">Statut :<% if nv.estValide == 1 %>
+        Validé
+        <% else %>
+         En attente de validation  
+        <% end %> </li>
+       
+
+        
+              </ul>
+        
+        </p>
+    <%= link_to link_to 'Valider', valider_path(:id => nv.id), {class: 'btn btn-raised btn-primary btn-inverse btn-sm', :style => "width: 318px; color:white;"}  %>
+      
+      </div>
+    </div></div>
+  
+
+  <!-- Add the extra clearfix for only the required viewport -->
+  
+<% end %>

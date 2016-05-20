@@ -1,0 +1,43 @@
+<% @livres.each do |livre| %>
+<div class="row">
+  
+  <div class="col-xs-6 col-sm-3"><div class="card" style="max-width: 318px;">
+      <img class="card-img-top" src="/images/book.jpg" style="max-width: 318px;" alt="Card image cap">
+      <div class="card-block " style="max-width: 318px;">
+        <h4 class="card-title center">  <%= livre.titre %></h4>
+        <p class="card-text">
+        
+             <ul class="list-group">
+                <li class="list-group-item">Auteur :  <%= livre.auteur %></li>
+                <li class="list-group-item">Editeur : <%= livre.editeur %></li>
+                <li class="list-group-item">Disponibilité :<% if livre.estDispo == 1 %>
+        Disponible
+        <% else %>
+        Emprunté  
+        <% end %></li>
+                <li class="list-group-item">Statut :<% if livre.estValide == 1 %>
+        Validé
+        <% else %>
+         En attente de validation  
+        <% end %> </li>
+
+        <li class="list-group-item">Actions :<%= link_to 'Show', livre, {:class => 'card-link', :style => 'color: blue;'} %>
+        <%= link_to 'Edit', edit_livre_path(livre), {:class => 'card-link', :style => 'color: blue;'} %>
+        <%= link_to 'Destroy', livre, {:class => 'card-link', :style => 'color: blue;'} %></li>
+              </ul>
+        
+        </p>
+   
+      
+      </div>
+    </div></div>
+  
+
+  <!-- Add the extra clearfix for only the required viewport -->
+  
+<% end %>
+
+</div> 
+
+<div class="clearfix hidden-sm-up"></div>
+

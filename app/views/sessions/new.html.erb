@@ -1,0 +1,18 @@
+<% if flash[:sucess] %>
+  <p class="sucess"><%= flash[:sucess] %></p>
+<% end %>
+<%= link_to 'Creer un compte adherent', new_adherent_path %>&nbsp;&nbsp;&nbsp; 
+        <%= link_to 'Creer un compte editeur', new_editeur_path %>
+<div class="container" style="width: 500px">
+
+    <%= form_tag '/login' ,{:class => "col s12"} do %>
+
+      
+        <h3 class="center form-signin-heading">Login</h3>
+       <%= email_field_tag :email,nil,class: 'form-control',:placeholder => 'Email' %>
+       <%= password_field_tag :password,nil,class: 'form-control', :placeholder => 'Password' %>
+        <%= submit_tag 'Login ',class: "btn btn-lg btn-primary btn-block" %>
+    <% end %> 
+        
+
+    </div> <!-- /container -->

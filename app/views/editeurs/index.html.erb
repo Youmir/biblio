@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Liste des Editeurs</h3>
+
+
+
+<% @editeurs.each do |editeur| %>
+<div class="row">
+  
+  <div class="col-xs-6 col-sm-3"><div class="card" style="max-width: 318px;">
+      <img class="card-img-top" src="/images/user-icon.png" style="max-width: 318px;" alt="Card image cap">
+      <div class="card-block " style="max-width: 318px;">
+        <p class="card-text">
+        
+             <ul class="list-group">
+                <li class="list-group-item">Nom :  <%= editeur.username %></li>
+                <li class="list-group-item">Email : <%= editeur.email %></li>
+              </ul>
+        
+        </p>
+      </div>
+    </div></div>
+  
+
+  <!-- Add the extra clearfix for only the required viewport -->
+  
+<% end %>
+
+</div> 
+
+<div class="clearfix hidden-sm-up"></div>
+
+
+

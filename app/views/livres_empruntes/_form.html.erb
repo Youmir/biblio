@@ -1,0 +1,25 @@
+<%= form_for(@livres_emprunte) do |f| %>
+  <% if @livres_emprunte.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@livres_emprunte.errors.count, "error") %> prohibited this livres_emprunte from being saved:</h2>
+
+      <ul>
+      <% @livres_emprunte.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :livre_id %><br>
+    <%= f.number_field :livre_id %>
+  </div>
+  <div class="field">
+    <%= f.label :adherent_id %><br>
+    <%= f.number_field :adherent_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

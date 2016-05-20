@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  isbn: 1
+  titre: MyString
+  auteur: MyString
+  estDispo: 1
+  estValide: 1
+
+two:
+  isbn: 1
+  titre: MyString
+  auteur: MyString
+  estDispo: 1
+  estValide: 1

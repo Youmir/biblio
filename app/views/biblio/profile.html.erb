@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="well well-sm">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <img src="/images/user.png" alt="" class="img-rounded img-responsive" />
+                    </div>
+                    <div class="col-sm-6 col-md-8">
+                        <h4>
+                            <% if user_logged_in? %>
+                            <%= current_user.username.capitalize %>
+                <% elsif editeur_logged_in? %>
+                            <%=current_editeur.username.capitalize %>
+                <% elsif adherent_logged_in? %>
+                            <%= current_adherent.nom.upcase %>&nbsp;<%= current_adherent.prenom.capitalize %>
+                            <% end %>
+                        <p><br />
+                            <i class="glyphicon glyphicon-envelope">&nbsp; </i>
+                            <% if user_logged_in? %>
+                            <%= current_user.email %>
+                <% elsif editeur_logged_in? %>
+                            <%=current_editeur.email %>
+                <% elsif adherent_logged_in? %>
+                            <%= current_adherent.email %>
+                            <% end %>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

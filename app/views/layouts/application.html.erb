@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BiblioTest5</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+ 
+  <%= csrf_meta_tags %>
+  <script type="text/javascript" src="js/bootstrap/bootstrap-dropdown.js"></script>
+<script>
+     $(document).ready(function(){
+        $('.dropdown-toggle').dropdown()
+    });
+</script>
+</head>
+<body>
+
+   <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><%= link_to 'Home', affich_path %></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active"><% if !logged_in? %>
+                  <%= link_to "Login", login_path %>
+                   <% end %></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false"><% if user_logged_in? %>
+  							Coin Admin<span class="caret"></span>
+  				<% elsif editeur_logged_in? %>
+  							coin editeur<span class="caret"></span>
+  				<% elsif adherent_logged_in? %>
+  							coin adherent<span class="caret"></span>
+  									
+  				 <% end %></a>
+                <ul class="dropdown-menu">
+                <% if user_logged_in? %>
+                  <li><a href="#"><%= link_to "Valider", check_path %></a></li>
+                   <% end %>
+                    <% if user_logged_in? %>
+                  <li><a href="#"><%= link_to "Adherents", adherents_path %></a></li>
+                   <% end %>
+                   <% if user_logged_in? %>
+                  <li><a href="#"><%= link_to "Editeurs", editeurs_path %></a></li>
+                  <% end %>
+                <% if editeur_logged_in? %>
+                  <li><a href="#"><%= link_to "Ajouter Livre", new_livre_path %></a></li>
+                  <% end %>
+                  <% if editeur_logged_in? %>
+                  <li><a href="#"><%= link_to "Modifier Livre", affich_to_mod_path %></a></li>
+                  <% end %>
+                  <% if editeur_logged_in? %>
+                  <li><a href="#"><%= link_to "Supprimer Livre", affich_to_des_path %></a></li>
+                  <% end %>
+                  <% if adherent_logged_in? %>
+                  <li><a href="#"><%= link_to "Mes Livres", me_books_path %></a></li>
+                  <% end %>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+                <% if user_logged_in? %>
+  							<%= current_user.username %>(admin)<span class="caret"></span>
+  				<% elsif editeur_logged_in? %>
+  							<%= current_editeur.username %>(editeur)<span class="caret"></span>
+  				<% elsif adherent_logged_in? %>
+  							<%= current_adherent.nom %>(adherent)<span class="caret"></span>
+  									
+  				<% end %></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#"><%= link_to "Profile", profile_path %></a></li>
+                  <li><a href="#"><%= link_to "Log out", logout_path %></a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+<% flash.each do |message_type, message| %>
+	<div class="alert alert-<%= message_type %>"><%= message %></div>
+	<% end%>
+
+<%= yield %>
+
+</body>
+</html>

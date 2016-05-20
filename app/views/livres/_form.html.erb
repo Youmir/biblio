@@ -1,0 +1,47 @@
+<%= form_for @livre , :html => {:class => "col s12"} do |f| %>
+  <% if @livre.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@livre.errors.count, "error") %> prohibited this livre from being saved:</h2>
+
+      <ul>
+      <% @livre.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="container">
+        <div class="col m10 offset-m1 s12">
+                        <div class="input-field col m6 s12">
+                            <p class="input-field">isbn :</p><%= f.number_field :isbn  %>
+                        </div>
+
+                        <div class="input-field col m6 s12">
+                             <p class="input-field">Titre :</p><%= f.text_field :titre %>
+                        </div>
+
+                        <div class="input-field col m6 s12">
+                             <p class="input-field">Auteur :</p><%= f.text_field :auteur %>
+                        </div>
+                      
+                    <div class="divider"></div>
+                    <div class="row">
+                        <div class="col m12">
+                         <p class="right-align"><%= f.submit 'valider', :class => 'btn btn-small waves-effect waves-light'%></p>
+                        </div>
+                    </div>
+                <% end %>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+

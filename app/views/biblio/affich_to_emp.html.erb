@@ -1,0 +1,19 @@
+<table class="table table-bordered table-hover">
+  <thead>
+     <tr>
+      <th>Isbn</th>
+      <th>Titre</th>
+      <th>Auteur</th>
+    </tr>
+  </thead>
+  <tbody>
+   <% @livres.each do |livre| %>
+      <tr>
+        <td><%= livre.isbn %></td>
+        <td><%= livre.titre %></td>
+        <td><%= livre.auteur %></td>  
+        <td><%= link_to 'emprunter', emprunter_path(:titre => livre.titre) %></td>  
+      </tr>
+    <% end %>
+  </tbody>
+</table>

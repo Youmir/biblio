@@ -1,0 +1,32 @@
+
+
+ <h3 class="title">Mes Livres empruntés</h3>
+<% for item in @emps %>
+<% livre20=Livre.find_by_id(item.livre_id)%>
+<div class="row">
+  
+  <div class="col-xs-6 col-sm-3"><div class="card" style="max-width: 318px;">
+      <img class="card-img-top" src="/images/book.jpg" style="max-width: 318px;" alt="Card image cap">
+      <div class="card-block " style="max-width: 318px;">
+        <h4 class="card-title center">  <%= livre20.titre %></h4>
+        <p class="card-text">
+        
+             <ul class="list-group">
+                <li class="list-group-item">Auteur :  <%= livre20.auteur %></li>
+                <li class="list-group-item">Editeur : <%= livre20.editeur %></li>
+              </ul>
+        
+        </p>
+        <%= button_to 'rendre', rendre_path(:titre => livre20.titre), {class: 'btn btn-raised btn-primary btn-inverse btn-sm', :style => "width: 318px", data: { confirm: "Etes vous sur de vouloir rendre ce livre ?" }}  %>
+      </div>
+    </div></div>
+  
+
+  <!-- Add the extra clearfix for only the required viewport -->
+  
+<% end %>
+
+</div> 
+
+<div class="clearfix hidden-sm-up"></div>
+

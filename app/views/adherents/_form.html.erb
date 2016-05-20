@@ -1,0 +1,43 @@
+<%= form_for @adherent, :html => {:class => "col s12"} do |f| %>
+  <% if @adherent.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@adherent.errors.count, "error") %> prohibited this adherent from being saved:</h2>
+
+      <ul>
+      <% @adherent.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="container">
+        <div class="col m10 offset-m1 s12">
+                        <div class="input-field col m6 s12">
+                            <p class="input-field">Nom :</p><%= f.text_field :nom  %>
+                        </div>
+                        <div class="input-field col m6 s12">
+                            <p class="input-field">Prenom :</p><%= f.text_field :prenom  %>
+                        </div>
+                        <div class="input-field col m6 s12">
+                            <p class="input-field">CIN :</p><%= f.text_field :CIN %>
+                        </div>
+
+                        <div class="input-field col m6 s12">
+                             <p class="input-field">Email :</p><%= f.email_field :email %>
+                        </div>
+
+                        <div class="input-field col m6 s12">
+                             <p class="input-field">password :</p><%= f.password_field :password %>
+                        </div>
+                      
+                    <div class="divider"></div>
+                    <div class="row">
+                        <div class="col m12">
+                         <p class="right-align"><%= f.submit 'valider', :class => 'btn btn-small waves-effect waves-light'%></p>
+                        </div>
+                    </div>
+                <% end %>
+        </div>
+
+    </div>

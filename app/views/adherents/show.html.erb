@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @adherent.nom %>
+</p>
+
+<p>
+  <strong>Prenom:</strong>
+  <%= @adherent.prenom %>
+</p>
+
+<p>
+  <strong>Cin:</strong>
+  <%= @adherent.CIN %>
+</p>
+
+<%= link_to 'Edit', edit_adherent_path(@adherent) %> |
+<%= link_to 'Back', adherents_path %>
